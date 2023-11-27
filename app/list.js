@@ -51,7 +51,7 @@ function List() {
     const handleNextPage = () => {
         const nextPage = currentPage + 1;
         setCurrentPage(nextPage);
-        fetchData(nextPage); // Fetch the next 20 products
+        fetchData(nextPage);
     };
 
     const handlePrevPage = () => {
@@ -226,6 +226,7 @@ function List() {
                                         ? "bg-gray-200"
                                         : "bg-blue-500 text-white"
                                         }`}
+                                    disabled={currentPage === totalPages}
                                 >
                                     Next
                                 </button>
