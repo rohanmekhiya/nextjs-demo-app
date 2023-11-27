@@ -1,0 +1,30 @@
+{
+  "name": "next-stock",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.4.2",
+    "bcrypt": "^5.1.1",
+    "bson": "^6.1.0",
+    "generate": "^0.10.0",
+    "mongodb": "^6.1.0",
+    "next": "13.5.4",
+    "next-auth": "^4.23.2",
+    "next-csrf": "^0.2.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "reactstrap": "^9.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "prisma": "^5.4.2",
+    "tailwindcss": "^3"
+  }
+}
