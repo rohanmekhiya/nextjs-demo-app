@@ -132,7 +132,7 @@ function List() {
         }
     };
 
-    function rohan() {
+    function clear() {
         setSearchTerm("");
         window.location.reload;
     }
@@ -159,7 +159,7 @@ function List() {
                         </button>
 
                         <button
-                            onClick={rohan}
+                            onClick={clear}
                             type="submit"
                             className="bg-blue-500 text-white px-4 py-2 rounded-md "
                         >
@@ -217,6 +217,7 @@ function List() {
                                         ? "bg-gray-200"
                                         : "bg-blue-500 text-white"
                                         }`}
+                                    disabled={currentPage === 1}
                                 >
                                     Previous
                                 </button>

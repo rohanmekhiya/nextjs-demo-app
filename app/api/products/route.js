@@ -14,7 +14,7 @@ export async function GET(req) {
 
         const parsedUrl = url.parse(req.url, true);
         const { name = '' } = parsedUrl.query;
-
+        console.log(name);
         const queryObject = {};
         if (name) {
             queryObject.name = { $regex: new RegExp(name), $options: 'i' };
