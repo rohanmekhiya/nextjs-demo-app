@@ -77,6 +77,7 @@ function Report({ find }) {
                     >
                         Run
                     </button>
+                    <button className="bg-blue-500 hover-bg-blue-600 text-white font-semibold py-2 px-4 rounded-md ml-4">clear</button>
                 </div>
             </div>
             {loading ? (
