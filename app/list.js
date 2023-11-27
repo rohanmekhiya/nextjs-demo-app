@@ -10,9 +10,9 @@ function List() {
     const [error, setError] = useState(null);
     const [btnLoading, setBtnLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const productsPerPage = 5;
+    const productsPerPage = 2;
 
-    const fetchData = async () => {
+    const fetchData = async (page) => {
         try {
             setLoading(true);
             let url = `/api/products?page=${currentPage}&perPage=${productsPerPage}`;
@@ -32,7 +32,7 @@ function List() {
 
     useEffect(() => {
         if (currentPage === 1 && searchTerm === "") {
-            fetchData();
+            fetchData(1);
         }
         if (searchTerm.length >= 3) {
             fetchData();
@@ -49,7 +49,9 @@ function List() {
     const totalPages = Math.ceil(products.length / productsPerPage);
 
     const handleNextPage = () => {
-        setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+        const nextPage = currentPage + 1;
+        setCurrentPage(nextPage);
+        fetchData(nextPage); // Fetch the next 20 products
     };
 
     const handlePrevPage = () => {
