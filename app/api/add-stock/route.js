@@ -5,8 +5,8 @@ export async function POST(request) {
 
     const uri = "mongodb+srv://rohanmekhiya915:avfsmM9sDAP2wYmB@cluster0.k10pl0t.mongodb.net/";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    const { date } = await request.json();
-    console.log(date);
+    const { date, name, stockQuantity } = await request.json();
+    console.log(date, name, stockQuantity);
 
     try {
         await client.connect();

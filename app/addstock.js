@@ -39,6 +39,7 @@ function Addstock({ onClose }) {
 
             const response = await fetch(`/api/products?name=${selectedProductName}`);
             const productData = await response.json();
+            console.log(productData);
 
             if (productData.products.length === 0) {
                 setBtnLoading(false);
