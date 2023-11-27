@@ -10,7 +10,7 @@ function List() {
     const [error, setError] = useState(null);
     const [btnLoading, setBtnLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const productsPerPage = 2;
+    const productsPerPage = 5;
 
     const fetchData = async (page) => {
         try {
@@ -210,7 +210,7 @@ function List() {
                             </table>
                         )}
                         {products.length > 0 && (
-                            <div className="flex justify-center mt-4 pb-8">
+                            <div className="flex justify-center mt-4 pb-4">
                                 <button
                                     onClick={handlePrevPage}
                                     className={`mx-1 px-3 py-1 rounded-md ${currentPage === 1
@@ -235,6 +235,17 @@ function List() {
                         )}
                     </div>
                 )}
+
+                <div className="flex justify-center">
+                    <p className="mr-2 font-semibold">
+                        Showing {indexOfFirstProduct + 1} -{" "}
+                        {Math.min(indexOfLastProduct, products.length)} of{" "}
+                        {products.length}
+                    </p>
+                    <p className="font-semibold">
+                        Page {currentPage} of {totalPages}
+                    </p>
+                </div>
 
                 {editingProduct ? (
                     <>
